@@ -1,0 +1,65 @@
+:root {
+  --theme-color: rgb(216, 3, 170);
+  --overlay-color: rgba(0, 0, 0, 0.61); /* Dark overlay with 50% opacity */
+}
+
+.container1 {
+  position: relative; /* Required for positioning the pseudo-element */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('./home.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  overflow: hidden; /* Ensure no overflow */
+}
+
+.container1::before {
+  content: ''; /* Required for pseudo-element */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--overlay-color); /* Dark filter color */
+  z-index: 1; /* Place the overlay above the background image but behind the content */
+}
+
+.container1 > * {
+  position: relative; /* Ensure content is above the overlay */
+  z-index: 2; /* Place content above the overlay */
+}
+.hi{
+
+  font-size: 26px;
+
+  margin-bottom: 5%;
+  color:var(--theme-color)
+}
+
+.typewriter {
+  color: #7d7d7e;
+  transition: 0.3s;
+  border-bottom: 1px solid var(--theme-color);
+  margin-bottom: 5%;
+}
+
+.go-button {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  color: #fff;
+  background-color: var(--theme-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.go-button:hover {
+  background-color: rgb(100, 0, 79);
+}
